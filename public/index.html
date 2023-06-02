@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <div class="container" id="app">
+        <header>
+            <div class="header">
+                <div class="header-left">
+                    <div class="header-left-top">ИНТЕРНЕТ МАГАЗИН</div>
+                    <div class="header-left-bottom">компьютерной техники</div>
+                </div>
+                <div class="header-right">
+                    <!-- <form action="#" class="header-right-form" @submit.prevent="filter">
+                        <input type="text" placeholder="телевизор" class="header-right-form-field" v-model="userSearch">
+                        <button class="header-right-form-button" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form> -->
+                    <search-filter></search-filter>
+                    <basket ref="basket"></basket>
+                    <!-- <button class="basket-button" type="button" @click="showBasket=!showBasket">корзина</button>
+                    <header-right :basket-items="basketItems" :img="imgBasket" :visibility="showBasket"
+                        @remove="remove">
+                    </header-right> -->
+
+                    <!-- <div class="basket-menu" v-show="showBasket">
+                        <div class="the-basket-is-empty" v-if="!basketItems.length">корзина пуста</div>
+                        <div class="basket-menu-id" v-for="item of basketItems">
+                            <div class="basket-menu-cart">
+                                <img class="picture" :scr="img" alt="No image">
+                                <div class="basket-menu-left-info">
+                                    <div class="basket-menu-item">{{item.product_name}}</div>
+                                    <div class="basket-menu-quantity">Количество: {{item.quantity}} штук</div>
+                                    <div class="basket-menu-price"> {{item.price}} руб</div>
+                                </div>
+                            </div>
+                            <div class="basket-menu-right">
+                                <div class="basket-menu-right-total">{{item.quantity * item.price}} руб</div>
+                                <button class="basket-menu-right-bdel" @click="remove(item)">&times;</button>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </header>
+        <main>
+            <error ref="error"></error>
+            <products ref="products"></products>
+            <!-- <div class="products">
+                <div class="product-item" v-for="product of filtered">
+                    <img :src="imgProduct" alt="No image!">
+                    <h3 class="product-item-name">{{product.product_name}}</h3>
+                    <p class="product-item-price">{{product.price}}руб</p>
+                    <button class="product-button-basket" @click="addProduct(product)">купить</button>
+                </div>
+            </div> -->
+            <!-- <products :products="filtered" :img="imgProduct" @add-product="addProduct">
+            </products> -->
+        </main>
+    </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="public\js\compProduct.js"></script>
+    <script src="public\js\compBasket.js"></script>
+    <script src="public\js\compFilter.js"></script>
+    <script src="public\js\compError.js"></script>
+    <script src="public\js\main.js"></script>
+</body>
+
+</html>
+<!-- <div class="the-basket-is-empty" v-if="!basketItems.length">корзина пуста</div> -->
